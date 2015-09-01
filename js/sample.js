@@ -1,6 +1,6 @@
 
 // 데이터셋이 CSV 파일일 때(헤더가 한글일 때)
-d3.tsv("https://raw.githubusercontent.com/dbaproject/Web/master/src/test.csv", function(error, data){
+d3.tsv("https://raw.githubusercontent.com/dbaproject/d3.js/master/src/mydata.tsv", function(error, data){
 	var dataSet = [];	// 데이터를 저장할 배열을 준비
 	for(var i=0; i < data.length; i++){	// 데이터 줄 수만큼 반복
 		dataSet.push(data[i].item1);	// 상품A의 레이블 데이터만 추출
