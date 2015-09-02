@@ -12,6 +12,7 @@ d3.tsv("https://raw.githubusercontent.com/dbaproject/d3.js/master/src/mydata.tsv
 	  .enter()	// 데이터 개수만큼 반복
 	  .append("rect")	// 데이터 개수만큼 rect 요소가 추가됨
 	  .attr("class", "bar")	// CSS 클래스를 지정
+	  .attr("width", "0px")				// 최초 막대그래프의 넓이를 0px로 지정
 	  .transition()							// 그래프 출력 시 애니메이션 효과 적용
 	  .delay(function(d, i){
 		return i * 500;					// 0.5초마다 그리도록 대기 시간을 설정
