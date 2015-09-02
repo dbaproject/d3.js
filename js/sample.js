@@ -12,6 +12,11 @@ d3.tsv("https://raw.githubusercontent.com/dbaproject/d3.js/master/src/mydata.tsv
 	  .enter()	// 데이터 개수만큼 반복
 	  .append("rect")	// 데이터 개수만큼 rect 요소가 추가됨
 	  .attr("class", "bar")	// CSS 클래스를 지정
+	  .transition()							// 그래프 출력 시 애니메이션 효과 적용
+	  .delay(function(d, i){
+		return i * 500;					// 0.5초마다 그리도록 대기 시간을 설정
+	       })
+	  .duration(2500)					// 2.5초에 걸쳐 애니메이션화 함
 	  .attr("width", function(d,i){	// 넓이를 지정. 두 번째의 파라미터에 함수를 지정
 			return d;	// 데이터 값을 그대로 넓이로 반환
 		})
