@@ -24,6 +24,25 @@ d3.tsv("https://raw.githubusercontent.com/dbaproject/d3.js/master/src/mydata.tsv
 	  .attr("height", 20)	// 높이를 지정
 	  .attr("x", 0)	// X 좌표를 0으로 함
 	  .attr("y", function(d, i){	// Y 좌표를 지정함
-			return i * 25	// 표시 순서에 25를 곱해 위치를 계산
+			return i * 25	 ; //표시 순서에 25를 곱해 위치를 계산
 		})
+  /*
+      .on("click",function(){
+       d3.select(this)
+         .style("fill","cyan")
+    })
+  */
+    d3.select("#updateButton")
+      .on("click",function(){
+      for(var i=0;i<dataSet.length;i++) {
+        dataSet[i] = Math.floor(Math.random()*320);
+      }
+    d3.select("#myGraph")
+      .selectAll("rect")
+      .data(dataSet)
+      .transition()
+      .attr("width",function(d,i){
+      return d + "px";
+    })
+})
 })
