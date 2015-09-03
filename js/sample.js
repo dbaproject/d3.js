@@ -35,7 +35,7 @@ d3.tsv("https://raw.githubusercontent.com/dbaproject/d3.js/master/src/mydata.tsv
     d3.select("#updateButton")
       .on("click",function(){
       for(var i=0;i<dataSet.length;i++) {
-        dataSet[i] = Math.floor(Math.random()*320);
+        dataSet[i] = Math.floor(Math.random() * 320);
       }
     d3.select("#myGraph")
       .selectAll("rect")
